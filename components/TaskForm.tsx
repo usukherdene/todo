@@ -1,11 +1,21 @@
 import { ChangeEvent, useState } from "react";
 
+type TaskFormProps = {
+  onCreateTask: (title: string) => void;
+};
+
 export const TaskForm = () => {
   const [taskTitle, setTaskTitle] = useState("");
   
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setTaskTitle(event.target.value);
   };
+
+  const handleSubmit = () => {
+    event?.preventDefault();
+    onCreateTask("taskTitle");
+    setTaskTitle("");
+  }
 
   return (
     <div>
