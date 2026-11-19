@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const TaskEmpty = () => {
+export const TaskEmpty = ({hasTasks}: {hasTasks: boolean}) => {
   return (
     <div className='w-full h-[224px] flex items-center justify-center flex-col'>
         <div className='w-[56px] h-[56px] rounded-full bg-[#F0F6F2] flex items-center justify-center'>
@@ -8,8 +8,7 @@ export const TaskEmpty = () => {
             <path d="M20 6L9 17L4 12" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" stroke="#6C9B82"/>
             </svg>
         </div>
-        <div className='m-2 text-[#304C3E] text-[16px] font-semibold'>Your list starts here</div>
-        <div className='m-2 text-[#7A8881] text-[14px] font-normal'>Add your first task above.</div>
+        <div className='m-2 text-[#304C3E] text-[16px] font-semibold'>{hasTasks ? "No tasks here" : "Your list starts here"}</div>
+        <div className='m-2 text-[#7A8881] text-[14px] font-normal'>{hasTasks ? "Try another filter to see your tasks." : "Add your first task above."}</div>
     </div>
-  )
-}
+  )};
